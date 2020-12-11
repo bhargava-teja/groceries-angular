@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div *ngFor="let item of productlist">
+            <div *ngIf="(item.type==type)||(type=='all')" >
+                <div class="col-9 mx-auto col-md-6 col-lg-12 my-5">
+                    <div class="card">
+                        <div class="img-container p-3">
+                            <div class="column" (click)="itemdetail(item)" >
+                                
+                            <img src={{item.filename}} class="card-img-top"  alt=" product" style="height: 150px; width: 200px;" />
+                                <div class="card-footer d-flex justify-content-between ">
+                                    <p class="align-self-center  mb-0 mt-1">
+                                        {{item.title}}
+                                    </p>
+                                
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+   
+</div>

@@ -1,0 +1,28 @@
+.container{
+    width: 100%;
+}
+ .card{
+    border-color:transparent;
+    transition:all 1s linear;
+}
+.card:hover{
+        border:0.04rem solid rgba(236, 235, 252, 0.2);
+        box-shadow:2px 2px 5px 0px  rgba(255, 254, 254, 0.904);
+        
+    }
+   .card-footer:hover{
+    
+            background:rgba(247,247,247);
+    }
+    
+
+ .img-container{
+        position:relative;
+        overflow:hidden;
+    }
+.card-img-top{
+        transition:all 1s linear;
+    }
+ .img-container:hover .card-img-top{
+        transform :scale(1.2);
+    }

@@ -1,0 +1,84 @@
+<div *ngIf="cartitemslist.length>0 " class="container-fluid text-center d-none d-lg-block">
+    <div class="row">
+        <div class="col-10 mx-auto col-lg-2">
+            <p class="text-uppercase">products</p>
+        </div>
+
+        <div class="col-10 mx-auto col-lg-2">
+            <p class="text-uppercase">name of products</p>
+        </div>
+
+        <div class="col-10 mx-auto col-lg-2">
+            <p class="text-uppercase">price</p>
+        </div>
+
+        <div class="col-10 mx-auto col-lg-2">
+            <p class="text-uppercase">quantity</p>
+        </div>
+
+        <div class="col-10 mx-auto col-lg-2">
+            <p class="text-uppercase">remove</p>
+        </div>
+
+        <div class="col-10 mx-auto col-lg-2">
+            <p class="text-uppercase">total</p>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+<div *ngFor="let items of cartitemslist">
+
+    <div class="row my-2 text-capitalize text-center">
+        <div class="col-10 mx-auto col-lg-2">
+            <img src={{items.filename}} alt="product" class="img-fluid" style="width: 5rem;height: 5rem;" />
+
+        </div>
+        <div class="col-10 mx-auto col-lg-2">
+            <span class="d-lg-none">product:</span> {{items.title}}
+        </div>
+        <div class="col-10 mx-auto col-lg-2">
+            <span class="d-lg-none">price:</span> {{items.price}}
+        </div>
+        <div class="col-10 mx-auto col-lg-2 my-2 my-lg-0">
+            <div class="d-flex justify-content-center">
+                <div>
+                    <span class="btn btn-black mx-1" (click)="decrementCount(items)" >-</span>
+                    <span class="btn btn-black mx-1">{{items.count}}</span>
+                    <span class="btn btn-black mx-1" (click)="incrementCount(items)">+</span>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-10 mx-auto col-lg-2">
+            <div class="cart-icon" >
+                <i class="fas fa-trash" (click)="removeitem(items)">remove</i>
+            </div>
+        </div>
+        <div class="col-10 mx-auto col-lg-2">
+            <strong>Item total:{{items.total}} </strong>
+        </div>
+
+
+
+
+    </div>
+</div>
+
+<div *ngIf="cartitemslist.length>0  else emptymsg">
+    <div class="col-10 mt-2 ml-sm-5 ml-md-auto col-sm-8 text-capitalize text-right">
+    <button class=" btn btn-outline-danger text-uppercase mb-3 px-5"  type="button"  (click)="clearcart()">
+    clear cart
+    </button>
+    <h4>Sub Total: ${{subtotal}}</h4>
+    <h4>Tax: ${{tax}}</h4>
+    <h4>Total: ${{total}}</h4>
+    
+</div>
+</div>
+<ng-template #emptymsg>
+  <h2 class="col-1 mt-5 ml-sm-1 ml-md-auto col-sm-12 text-capitalize text-center"><i>Your cart is  empty</i></h2>
+</ng-template>

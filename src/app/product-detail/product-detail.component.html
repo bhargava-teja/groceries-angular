@@ -1,0 +1,33 @@
+<div class="container py-3">
+    <div class="row">
+        <div class="col-10 mx-auto text-center text-slanted text-blue my-5">
+            <h1>{{itemDetail.type}}</h1>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-10 mx-auto col-md-6 my-3 ">
+            <img src={{itemDetail.filename}} alt="product" class="img-fluid" style="height: 300px;width: 300px;"/>
+        </div>
+        <div class="col-10 mx-auto col-md-6 my-3  text-capitailize">
+            <h2>Item: {{itemDetail.title}}</h2>
+            
+            <h4 >
+                <strong>
+                    price: <span>$</span>{{itemDetail.price}}
+                </strong>
+            </h4>
+            <p class="text-capitalize font-weight-bold mb-3 mb-0">
+                some info about product:
+
+            </p>
+            <p class="text-muted lead">
+                {{itemDetail.description}}
+            </p>
+        <button class="buttonConatiner" style="--c:#009ffd" routerLink="">Go to Groceries</button>
+            <button class="buttonConatiner" style="--c:orange" (click)="addtocart()" [disabled]="isDisabled" >{{buttonmsg}}</button>
+        </div>
+    </div>
+</div>
+
